@@ -196,23 +196,44 @@ export default function Home() {
                       <span className="muted">{b.meta}</span>
                     </div>
                     <div className="bcard__art" aria-hidden="true">
-                      <BuildArt art={b.art} />
+                      <div className="bcard__art-visual">
+                        <BuildArt art={b.art} />
+                      </div>
                     </div>
-                    <h3>
-                      {b.title} <em>{b.italic}</em>
-                    </h3>
-                    <p>{b.text}</p>
+                    <div className="bcard__info">
+                      <h3>
+                        {b.title} <em>{b.italic}</em>
+                      </h3>
+                      <p>{b.text}</p>
+                    </div>
                   </li>
                 ))}
-                <li className="bcard bcard--end">
-                  <span className="eyebrow accent">Something else?</span>
-                  <h3>
-                    If it lives on a screen, <em>I&rsquo;ll build it.</em>
-                  </h3>
-                  <a href="#contact" className="btn btn--signal" style={{ alignSelf: "flex-start" }}>
-                    Tell me about it
-                    <Arrow />
-                  </a>
+                <li className="bcard bcard--end" data-cursor="Contact">
+                  <div className="bcard__top eyebrow">
+                    <span className="accent">09</span>
+                    <span className="muted">Custom</span>
+                  </div>
+                  <div className="bcard__art bcard__art--end" aria-hidden="true">
+                    <div className="bcard__art-visual art-stage art-stage--end">
+                      <div className="art-end-code">
+                        <span className="art-pulse-dot" style={{ background: "var(--signal)" }} />
+                        <pre><code>{`// Bespoke scope\nconst project = await studio.build({\n  awwwards: true,\n  performance: 100,\n  scale: "unlimited"\n});`}</code></pre>
+                      </div>
+                      <div className="art-floating art-floating--end">
+                        <span>Full-Stack · Mobile · AI · Tools</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bcard__info">
+                    <span className="eyebrow accent" style={{ display: "block", marginBottom: "0.35rem" }}>Something else?</span>
+                    <h3>
+                      If it lives on a screen, <em>I&rsquo;ll build it.</em>
+                    </h3>
+                    <a href="#contact" className="btn btn--signal" style={{ alignSelf: "flex-start", marginTop: "0.75rem" }}>
+                      Tell me about it
+                      <Arrow />
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>

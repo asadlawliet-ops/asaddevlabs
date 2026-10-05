@@ -158,29 +158,25 @@ export default function Motion() {
 
         // Desktop-only choreography
         mm.add("(min-width: 1025px)", () => {
-          // Pinned horizontal gallery
+          // Pinned horizontal gallery with smooth scrub & parallax depth
           const section = document.querySelector<HTMLElement>("[data-hscroll]");
           const track = section?.querySelector<HTMLElement>(".build__track");
           if (section && track) {
-            const dist = () => track.scrollWidth - window.innerWidth;
-            gsap.to(track, {
-              x: () => -dist(),
-              ease: "none",
+            const dist = () => Math.max(0, track.scrollWidth - window.innerWidth + 80);
+            const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: section,
                 start: "top top",
                 end: () => `+=${dist()}`,
                 pin: true,
-                scrub: 1,
+                scrub: 0.6,
                 invalidateOnRefresh: true,
-                anticipatePin: 1,
               },
             });
-            gsap.to(".build__progress i", {
-              scaleX: 1,
-              ease: "none",
-              scrollTrigger: { trigger: section, start: "top top", end: () => `+=${dist()}`, scrub: true },
-            });
+
+            tl.to(track, { x: () => -dist(), ease: "none" }, 0);
+            tl.to(".build__progress i", { scaleX: 1, ease: "none" }, 0);
+            tl.to(".bcard__art-visual", { xPercent: -10, ease: "none" }, 0);
           }
 
           // Hero title drifts & softens as you leave
