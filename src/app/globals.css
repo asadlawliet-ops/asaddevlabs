@@ -37,7 +37,7 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
 
-  --font-display: "Bodoni Moda", "Didot", "Bodoni 72", serif;
+  --font-display: "Fraunces", "Bodoni 72", "Didot", serif;
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 }
@@ -374,12 +374,15 @@ html.no-preload .preloader {
   width: min(78vw, 980px);
   position: relative;
 }
-.preloader__logo svg {
+.preloader__logo svg,
+.preloader__logo img,
+.preloader__logo .adl-logo {
   width: 100%;
   height: auto;
+  display: block;
 }
 .preloader__logo .ghost {
-  opacity: 0.12;
+  opacity: 0.14;
 }
 .preloader__logo .fill {
   position: absolute;
@@ -423,11 +426,14 @@ html.no-preload .preloader {
 }
 .header__logo {
   display: block;
-  width: clamp(130px, 12vw, 172px);
+  width: clamp(140px, 13vw, 184px);
 }
-.header__logo svg {
+.header__logo svg,
+.header__logo img,
+.header__logo .adl-logo {
   width: 100%;
   height: auto;
+  display: block;
 }
 .header__nav {
   display: flex;
@@ -1896,11 +1902,14 @@ html.js:not(.reduce) .score__ring .fg {
 }
 .footer__logo {
   margin-top: clamp(1rem, 3vw, 2rem);
-  color: var(--bone);
+  width: min(92vw, 1200px);
 }
-.footer__logo svg {
+.footer__logo svg,
+.footer__logo img,
+.footer__logo .adl-logo {
   width: 100%;
   height: auto;
+  display: block;
 }
 .footer__base {
   display: flex;

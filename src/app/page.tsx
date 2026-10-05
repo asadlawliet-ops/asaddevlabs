@@ -277,10 +277,10 @@ export default function Home() {
               <div className="face" data-reveal>
                 <span className="eyebrow accent">Display</span>
                 <span className="face__name display" style={{ fontSize: "var(--step-3)" }}>
-                  ADL Didone <em>Italic</em>
+                  Fraunces <em>Italic</em>
                 </span>
                 <span className="face__chars">
-                  Bodoni Moda, re-tuned: optical size locked at 96 for razor hairlines, tracking −3.5%.
+                  Fraunces Variable: optical size dynamically scaled (opsz 9–144), variable weight (100–900), and softened serif curvature.
                 </span>
               </div>
               <div className="face" data-reveal>
@@ -556,7 +556,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer__logo" aria-hidden="true">
-          <Logo />
+          <Logo variant="light" />
         </div>
         <div className="footer__base eyebrow muted">
           <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>

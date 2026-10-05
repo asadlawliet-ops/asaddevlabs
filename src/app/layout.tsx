@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -8,14 +9,23 @@ import { LogoSprite } from "@/components/Logo";
 import "./globals.css";
 
 /* ── ADL Type System ─────────────────────────────────────────────
-   Display  → Bodoni Moda (variable: wght 400–900, opsz 6–96) tuned
-              per size to echo the Didone wordmark.
+   Display  → Fraunces Variable (wght 100–900, opsz 9–144, SOFT, WONK)
+              Authentic high-contrast editorial serif matching the wordmark.
    Text     → Geist (Vercel's grotesk) for UI & body copy.
    Code     → Geist Mono for indexes, labels and metadata.        */
-const display = Bodoni_Moda({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz"],
+const display = localFont({
+  src: [
+    {
+      path: "./fonts/Fraunces-Variable.ttf",
+      style: "normal",
+      weight: "100 900",
+    },
+    {
+      path: "./fonts/Fraunces-Italic-Variable.ttf",
+      style: "italic",
+      weight: "100 900",
+    },
+  ],
   variable: "--font-display",
   display: "swap",
 });
