@@ -549,6 +549,15 @@ export default function Home() {
             <a href={`mailto:${site.email}`} className="link-u" style={{ justifySelf: "start" }}>
               {site.email}
             </a>
+            <a
+              href={site.socials[0].href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-u"
+              style={{ justifySelf: "start" }}
+            >
+              LinkedIn ↗
+            </a>
             <span>{site.location}</span>
             <span>
               <Clock />

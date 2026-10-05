@@ -168,7 +168,7 @@ p {
   font-optical-sizing: none;
   font-variation-settings: "opsz" 96;
   letter-spacing: -0.035em;
-  line-height: 0.92;
+  line-height: 1.05;
 }
 .display em,
 .serif-i {
@@ -178,9 +178,11 @@ p {
 }
 .h2 {
   font-size: var(--step-5);
+  line-height: 1.15;
 }
 .h3 {
   font-size: var(--step-3);
+  line-height: 1.18;
 }
 .eyebrow {
   font-family: var(--font-mono);
@@ -205,11 +207,19 @@ p {
   color: var(--signal);
 }
 
-/* Split-text line masks */
-.split-line {
-  overflow: clip;
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
+/* Split-text line masks & descender clearance */
+.split-line,
+.split-line-mask,
+div:has(> .split-line-inner) {
+  overflow: hidden;
+  padding-bottom: 0.22em !important;
+  margin-bottom: -0.22em !important;
+}
+
+.split-line-inner {
+  display: block;
+  padding-bottom: 0.22em;
+  margin-bottom: -0.22em;
 }
 
 /* Pre-JS reveal states (only when motion is allowed) */
@@ -254,6 +264,8 @@ html.js:not(.reduce) [data-split] {
 }
 .sec-head .sec-title {
   grid-column: 4 / -1;
+  line-height: 1.15;
+  padding-bottom: 0.18em;
 }
 .sec-label .idx {
   color: var(--signal);
@@ -687,6 +699,8 @@ a:focus-visible > .roll {
 }
 .hero__title {
   font-size: var(--step-hero);
+  line-height: 0.98;
+  padding-bottom: 0.12em;
   margin-block: clamp(2rem, 6vh, 4rem);
 }
 .hero__title .l2 {
@@ -1625,15 +1639,16 @@ html.js:not(.reduce) .score__ring .fg {
 }
 .plan__name {
   font-family: var(--font-display);
-  font-size: var(--step-4);
+  font-size: clamp(1.75rem, 1.25rem + 1.1vw, 2.6rem);
   font-weight: 500;
-  line-height: 0.9;
-  letter-spacing: -0.035em;
-  font-variation-settings: "opsz" 96;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 72;
+  overflow-wrap: break-word;
 }
 .plan__name em {
   display: block;
-  font-size: 0.45em;
+  font-size: 0.52em;
   font-weight: 400;
   letter-spacing: -0.01em;
   margin-top: 0.4rem;

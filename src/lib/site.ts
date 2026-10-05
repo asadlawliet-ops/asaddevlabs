@@ -11,16 +11,13 @@ export const site = {
   shortTitle: "AsadDevLabs — Independent Web Studio",
   description:
     "AsadDevLabs designs and engineers full-custom, Awwwards-level websites — landing pages, multi-page sites and e-commerce — plus technical SEO, Stripe & Shopify, Sanity CMS, Android apps, n8n automation, Chrome extensions and Google Workspace add-ons.",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@asaddevlabs.com",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Asadlawliet@gmail.com",
   location: "Karachi, Pakistan",
   timezone: "Asia/Karachi",
   tzLabel: "PKT",
   founder: "Asad",
   socials: [
-    { label: "GitHub", href: "https://github.com/Asad-AdersTalents" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/" },
-    { label: "X / Twitter", href: "https://x.com/" },
-    { label: "Instagram", href: "https://www.instagram.com/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/asad-lawliet/" },
   ],
   keywords: [
     "custom website design",

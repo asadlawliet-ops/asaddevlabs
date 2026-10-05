@@ -73,7 +73,12 @@ export default function Motion() {
 
         // Masked line reveals
         gsap.utils.toArray<HTMLElement>("[data-split]").forEach((el) => {
-          const split = SplitText.create(el, { type: "lines", mask: "lines", linesClass: "split-line-inner", autoSplit: true,
+          const split = SplitText.create(el, {
+            type: "lines",
+            mask: "lines",
+            maskClass: "split-line-mask",
+            linesClass: "split-line-inner",
+            autoSplit: true,
             onSplit(self) {
               gsap.set(el, { visibility: "visible" });
               const isIntro = el.dataset.split === "intro";
