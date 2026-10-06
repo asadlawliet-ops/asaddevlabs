@@ -462,10 +462,11 @@ html.no-preload .preloader {
   display: inline-flex;
   flex-direction: column;
   transition: transform 0.6s var(--ease-out);
+  will-change: transform;
 }
 a:hover > .roll,
 a:focus-visible > .roll {
-  transform: translateY(-50%);
+  transform: translateY(-100%);
 }
 .header__right {
   display: flex;

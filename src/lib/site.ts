@@ -11,7 +11,10 @@ export const site = {
   shortTitle: "AsadDevLabs — Independent Web Studio",
   description:
     "AsadDevLabs designs and engineers full-custom, Awwwards-level websites — landing pages, multi-page sites and e-commerce — plus technical SEO, Stripe & Shopify, Sanity CMS, Android apps, n8n automation, Chrome extensions and Google Workspace add-ons.",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Asadlawliet@gmail.com",
+  email:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL && process.env.NEXT_PUBLIC_CONTACT_EMAIL !== "hello@asaddevlabs.com"
+      ? process.env.NEXT_PUBLIC_CONTACT_EMAIL
+      : "asadlawliet@gmail.com",
   location: "Karachi, Pakistan",
   timezone: "Asia/Karachi",
   tzLabel: "PKT",
